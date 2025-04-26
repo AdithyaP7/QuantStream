@@ -54,13 +54,13 @@ def fetch_dummy_stock_data(symbol):
     dummy_price = {'MSFT': 100.00, 'AAPL': 150.00, 'GOOGL': 200.00, 'AMZN': 300.00, 'TSLA': 400.00, 'META': 500.00, 'NVDA': 600.00, 'AMD': 700.00, 'IBM': 900.00, 'NFLX': 1000.00}
     dummy_price[symbol] = dummy_price[symbol] + 1
     return {
-        "symbol": symbol,
+        "symbol": str(symbol),
         "timestamp": str(current_time),
-        "open": dummy_price[symbol] + 1,
-        "high": dummy_price[symbol] + 3,
-        "low": dummy_price[symbol] - 3,
-        "close": dummy_price[symbol],
-        "volume": "1000000"
+        "open": str(dummy_price[symbol] + 1),
+        "high": str(dummy_price[symbol] + 3),
+        "low": str(dummy_price[symbol] - 3),
+        "close": str(dummy_price[symbol]),
+        "volume": str(1000000)
     }
 
 def send_to_kafka(symbols):

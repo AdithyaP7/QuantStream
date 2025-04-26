@@ -1,0 +1,194 @@
+[2025-04-25 22:00:46,217] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 2 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:00:46,478] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:00:50,403] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/150_169_1745632849916.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:01:46,801] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 2 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:01:47,003] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:01:50,326] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/170_187_1745632910075.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:02:47,223] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 2 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:02:47,432] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:02:50,961] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/188_199_1745632970762.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:03:47,687] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 2 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:03:47,925] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:03:51,246] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/200_219_1745633030976.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:04:48,173] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 2 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:04:48,329] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] read load history between 2025-04-26T01:04:47Z and 2025-04-26T02:04:47Z. retrieved 12 records. (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:04:48,880] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 2 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:04:51,481] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/220_239_1745633091265.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:05:49,178] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:05:49,361] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:05:51,944] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/240_259_1745633151672.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:06:49,569] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:06:49,802] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:06:52,434] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/260_279_1745633212167.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:07:50,026] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:07:50,267] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:07:52,826] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/280_289_1745633272548.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:08:50,734] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:08:50,933] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:08:53,129] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/290_309_1745633332846.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:09:51,115] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:09:51,323] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:09:53,488] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/310_329_1745633393165.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:10:51,531] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:10:51,705] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:10:54,054] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/330_349_1745633453716.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:11:51,982] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:11:52,199] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:11:54,007] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/350_367_1745633513738.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:12:52,480] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:12:52,654] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:12:54,557] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/368_379_1745633574278.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:13:52,865] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:13:53,108] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:13:54,868] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/380_399_1745633634569.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:14:53,403] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:14:53,622] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:14:55,140] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/400_419_1745633694884.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:15:53,771] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:15:54,007] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:15:55,597] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/420_439_1745633755313.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:16:54,260] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:16:54,601] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:16:55,988] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/440_459_1745633815738.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:17:54,768] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:17:54,960] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:17:56,433] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/460_469_1745633876182.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:18:55,149] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:18:55,366] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:18:56,715] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/470_489_1745633936455.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:19:55,543] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:19:55,733] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:19:57,095] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/490_509_1745633996733.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:20:55,988] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:20:56,228] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:20:57,459] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/510_529_1745634057217.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:21:56,319] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:21:56,893] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:21:57,950] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/530_549_1745634117687.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:22:57,114] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:22:57,306] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:22:58,151] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/550_562_1745634177859.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:23:57,542] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:23:57,730] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:23:58,456] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/563_579_1745634238199.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:24:57,881] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:24:58,103] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:24:58,755] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/580_599_1745634298472.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:25:58,182] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:25:58,311] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:25:59,099] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/600_629_1745634358886.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:26:58,554] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:26:58,737] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:26:59,475] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/630_657_1745634419113.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:27:59,039] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:27:59,282] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:27:59,472] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/658_676_1745634479277.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:28:59,403] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:28:59,582] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:29:00,094] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/677_687_1745634539852.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:29:59,767] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:29:59,942] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:30:00,401] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/688_707_1745634600107.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:31:00,059] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:31:00,244] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:31:00,659] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/708_727_1745634660418.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)
+[2025-04-25 22:32:00,488] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] searched 1 files in ingest report, found 1 (com.snowflake.kafka.connector.internal.SnowflakeIngestionServiceV1:79)
+[2025-04-25 22:32:00,920] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] purge 1 files from stage: SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_STAGE_test_connector (com.snowflake.kafka.connector.internal.SnowflakeConnectionServiceV1:79)
+[2025-04-25 22:32:01,241] INFO [test_sink_connector|task-0] 
+[SF_KAFKA_CONNECTOR] pipe SNOWFLAKE_KAFKA_CONNECTOR_test_sink_connector_PIPE_test_connector_0, flush pipe: test_sink_connector/test_connector/0/728_747_1745634720833.json.gz (com.snowflake.kafka.connector.internal.SnowflakeSinkServiceV1:79)

@@ -7,6 +7,8 @@ import time
 from datetime import datetime
 import pytz
 
+# Run this command to start the terminal:
+# java -jar ThetaTerminal.jar quantstream.09@gmail.com Quantstream123
 KAFKA_TOPIC = "stock_data"
 KAFKA_BROKER = "localhost:9091"
 
@@ -71,7 +73,6 @@ def get_current_stock_price(ticker):
 
 
 def send_to_kafka(symbols):
-    combined_data = []
     timestamp_utc = datetime.now(pytz.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')
     for symbol in symbols:
         open_price, high_price, low_price, close_price, volume = get_ohlc_prices(symbol)
@@ -89,26 +90,19 @@ def send_to_kafka(symbols):
                     "volume": volume,
                     "current_price": current_price
                 }
-                combined_data.append(stock_data)
+                # Send each record separately
+                producer.send(KAFKA_TOPIC, value=stock_data)
+                producer.flush()
+                print(f"Sent to Kafka: {stock_data}")
             else:
                 print(f"Failed to retrieve current price for {symbol}.")
         else:
             print(f"Failed to retrieve OHLC data for {symbol}.")
 
-    if combined_data:
-        # Prettify the JSON data for console output
-        pretty_data = json.dumps(combined_data, indent=4)
-        producer.send(KAFKA_TOPIC, value=combined_data)
-        producer.flush()
-        print(f"Sent to Kafka: {pretty_data}")
-    else:
-        print("No data to send to Kafka.")
-
-
 if __name__ == "__main__":
     try:
         while True:
             send_to_kafka(["MSFT", 'AAPL', 'GOOGL', 'AMZN', 'TSLA', 'META', 'NVDA', 'AMD', 'IBM', 'NFLX'])
-            time.sleep(60)
+            time.sleep(30)
     except KeyboardInterrupt:
         print("Stopped producer.")
