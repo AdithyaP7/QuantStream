@@ -50,7 +50,7 @@ SNOWFLAKE_ACCOUNT=your_account_identifier
 
 ---
 
-## Kafka Setup
+## Data Streaming Setup
 
 ### 1. Open a ThetaTerminal
 QuantStream uses the **ThetaData API** for real-time and historical stock data.
@@ -68,7 +68,7 @@ Navigate to your Kafka directory:
 cd kafka_2.13-3.9.0
 ```
 
-Open **three separate terminals** and execute the following:
+Open **three new separate terminals** and execute the following:
 
 - **Terminal 1: Start Zookeeper Server**
   ```bash
@@ -98,7 +98,6 @@ Poll data from the ThetaData API and publish JSON message to the stock_data Kafk
 python newdata.py
 ```
 
----
 
 ### 5. Kafka Snowflake Sink Connector
 
@@ -122,15 +121,14 @@ python newdata.py
       config/SF_connect.properties
   ```
 
----
+Suggested Terminal setup at this point:
+![image](https://github.com/user-attachments/assets/bd037e87-65f9-4394-be75-e914a593accc)
+
 
 ### 6. Snowflake Database
 Configured in "Schema Setup" SQL Worksheet
 
 TO-DO
-
----
-
 
 ### 7. Snowflake Python Worksheet
 Configured in "ML Models" Python Worksheet
@@ -139,7 +137,9 @@ TO-DO
 
 ---
 
-### 8. Machine Learning + Flask Application
+## Machine Learning Setup
+
+### 1. Machine Learning + Flask Application
 Configured in "ML Models" Python Worksheet
 
 TO-DO
