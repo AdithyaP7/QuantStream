@@ -43,7 +43,6 @@ pip install -r requirements.txt
 Create a `.env` file in the project root directory and populate it with your credentials:
 
 ```
-ALPHA_VANTAGE_API_KEY=5SIOLTZC95CTPAJF
 SNOWFLAKE_USER=your_snowflake_username
 SNOWFLAKE_PASSWORD=your_password
 SNOWFLAKE_ACCOUNT=your_account_identifier
@@ -53,7 +52,15 @@ SNOWFLAKE_ACCOUNT=your_account_identifier
 
 ## Kafka Setup
 
-### 1. Start Zookeeper & Kafka
+### 1. Open a ThetaTerminal
+QuantStream uses the **ThetaData API** for real-time and historical stock data.
+
+Run this command to start the terminal:
+```bash
+java -jar ThetaTerminal.jar quantstream.09@gmail.com Quantstream123
+```
+
+### 2. Start Zookeeper & Kafka
 
 Navigate to your Kafka directory:
 
@@ -78,18 +85,24 @@ Open **three separate terminals** and execute the following:
   bin/kafka-topics.sh --create --topic stock_data --bootstrap-server localhost:9091 --replication-factor 1 --partitions 1
   ```
 
-### 2. Start Kafka Consumer
+### 3. Start Kafka Consumer
 Monitor stock data flow using:
 
 ```bash
 bin/kafka-console-consumer.sh --topic stock_data --from-beginning --bootstrap-server localhost:9091
 ```
 
+### 4. Start Kafka Producer
+Poll data from the ThetaData API and publish JSON message to the stock_data Kafka topic:
+```bash
+python newdata.py
+```
+
 ---
 
-### 3. Kafka Snowflake Sink Connector
+### 5. Kafka Snowflake Sink Connector
 
-- Update the Kafka Connect standalone properties file:
+- Update the Kafka Connect standalone properties file (different path depending on your file tree):
   ```properties
   plugin.path=/Users/akshaymistry/Dev/gt/cs4440/QuantStream/kafka_2.13-3.9.0/libs
   ```
@@ -111,15 +124,25 @@ bin/kafka-console-consumer.sh --topic stock_data --from-beginning --bootstrap-se
 
 ---
 
-## API Integration
-QuantStream uses the **Alpha Vantage API** for real-time and historical stock data.
+### 6. Snowflake Database
+Configured in "Schema Setup" SQL Worksheet
 
-- Sample API Key (for development/testing):
-  ```
-  5SIOLTZC95CTPAJF
-  ```
+TO-DO
 
-Visit [Alpha Vantage](https://www.alphavantage.co/documentation/) for full API documentation.
+---
+
+
+### 7. Snowflake Python Worksheet
+Configured in "ML Models" Python Worksheet
+
+TO-DO
+
+---
+
+### 8. Machine Learning + Flask Application
+Configured in "ML Models" Python Worksheet
+
+TO-DO
 
 ---
 
