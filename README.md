@@ -1,6 +1,6 @@
 # QuantStream
 
-**QuantStream** is a real-time stock market analytics system that empowers everyday traders by delivering advanced insights through enhanced data streaming, processing, storage, and analytics. This system integrates Kafka, Snowflake, and Alpha Vantage API to create a robust, scalable, and interactive trading experience.
+**QuantStream** is a real-time stock market analytics system that empowers everyday traders by delivering advanced insights through enhanced data streaming, processing, storage, and analytics. This system integrates Kafka, Snowflake, and ThetaData API to create a robust, scalable, and interactive trading experience.
 
 ---
 
@@ -129,7 +129,7 @@ Suggested Terminal setup at this point:
 ![image](https://github.com/user-attachments/assets/bd037e87-65f9-4394-be75-e914a593accc)
 
 
-### 6. Snowflake Database
+### 6. Snowflake Database Setup
 Configured in "Schema Setup" SQL Worksheet
 
 TO-DO
