@@ -11,7 +11,7 @@ df_res = pd.concat([df_tail, df_2], ignore_index=True)
 
 def plot_stock_predictions_from_csv(df, title="Stock Price Predictions (1-min intervals)"):
     plt.figure(figsize=(14, 7))
-    plt.plot(df.index, df['CLOSE_PRICE'], label='Actual Close Price', marker='o')
+    plt.plot(df.index, df['CURRENT_PRICE'], label='Actual Close Price', marker='o')
     plt.plot(df.index, df['PREDICTED_PRICE'], label='Predicted Close Price', marker='x')
     plt.title(title)
     plt.xlabel('Minute Interval')

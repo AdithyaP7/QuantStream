@@ -36,17 +36,37 @@
 
 <script>
 // Plot the forecasted stock price chart
-const forecastLabels = {{ labels|tojson }};
-const forecastPrices = {{ prices|tojson }};
+const historicalLabels = {{ h_labels | tojson }};
+const historicalPrices = {{ h_prices | tojson }};
 
-const trace = {
+const forecastLabels = {{ f_labels|tojson }};
+const forecastPrices = {{ f_prices|tojson }};
+
+const traceHistorical = {
+    x: historicalLabels,
+    y: historicalPrices,
+    mode: 'lines',
+    name: '{{ symbol }} Actual Price',
+    line: { color: 'black', width: 3 }
+};
+
+const traceForecast = {
     x: forecastLabels,
     y: forecastPrices,
     mode: 'lines+markers',
     name: '{{ symbol }} Forecasted Price',
-    line: { color: 'green', width: 3 },
+    line: { color: 'green', width: 3, dash: 'dot' },
     marker: { size: 4 }
 };
+
+// const trace = {
+//     x: forecastLabels,
+//     y: forecastPrices,
+//     mode: 'lines+markers',
+//     name: '{{ symbol }} Forecasted Price',
+//     line: { color: 'green', width: 3 },
+//     marker: { size: 4 }
+// };
 
 const layout = {
     xaxis: {
@@ -65,6 +85,6 @@ const layout = {
     paper_bgcolor: '#f8f9fa'
 };
 
-Plotly.newPlot('forecast-chart', [trace], layout, {responsive: true});
+Plotly.newPlot('forecast-chart', [traceHistorical, traceForecast], layout, {responsive: true});
 </script>
 {% endblock %}

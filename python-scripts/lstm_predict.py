@@ -3,21 +3,61 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
+import snowflake.connector
 
 model_file = "models/lstm_model.pkl"
 with open(model_file, "rb") as file:
     model = pickle.load(file)
 
+conn = snowflake.connector.connect(
+    user='quantstream',
+    password='Quantstream123',
+    account='wrbnhoo-xib79361',
+    warehouse='COMPUTE_WH',
+    database='STOCK_DB',
+    schema='STOCK_SCHEMA'
+)
 
-df = pd.read_csv("HistoricalData/AAPL_ohlc_data.csv")
-df['DATE_TIME'] = pd.to_datetime(df['DATE_TIME'])
-df.set_index('DATE_TIME', inplace=True)
+# query = """
+#         SELECT 
+#             RECORD_CONTENT:stock_symbol::STRING AS stock_symbol,
+#             RECORD_CONTENT:timestamp_utc::STRING AS timestamp_utc,
+#             RECORD_CONTENT:open_price::FLOAT AS open_price,
+#             RECORD_CONTENT:close_price::FLOAT AS close_price,
+#             RECORD_CONTENT:current_price::FLOAT AS current_price
+#         FROM STOCK_DB.STOCK_SCHEMA.TEST_CONNECTOR
+#         WHERE RECORD_CONTENT:stock_symbol::STRING = 'AAPL'
+#         ORDER BY timestamp_utc
+#     """
+query = """
+SELECT
+    RECORD_CONTENT:stock_symbol::STRING AS stock_symbol,
+    RECORD_CONTENT:timestamp_utc::TIMESTAMP_NTZ AS timestamp_utc,
+    RECORD_CONTENT:open_price::FLOAT AS open_price,
+    RECORD_CONTENT:close_price::FLOAT AS close_price,
+    RECORD_CONTENT:current_price::FLOAT AS current_price
+FROM
+    STOCK_DB.STOCK_SCHEMA.TEST_CONNECTOR_SYNTHETIC
+WHERE
+    RECORD_CONTENT:stock_symbol::STRING = 'NFLX'
+    AND DAYOFWEEK(RECORD_CONTENT:timestamp_utc::TIMESTAMP_NTZ) BETWEEN 2 AND 6
+ORDER BY
+    timestamp_utc ASC
+
+    """
+      
+
+df = pd.read_sql(query, conn)
+conn.close()
+
+df['TIMESTAMP_UTC'] = pd.to_datetime(df['TIMESTAMP_UTC'])
+df.set_index('TIMESTAMP_UTC', inplace=True)
 df.sort_index(inplace=True)
 sequence_length = 60
 adjusted_index = df.index[sequence_length:]
 
 scaler = MinMaxScaler(feature_range=(0, 1))
-scaled_data = scaler.fit_transform(df[['CLOSE_PRICE']])
+scaled_data = scaler.fit_transform(df[['CURRENT_PRICE']])
 X, y = [], []
 for i in range(sequence_length, len(scaled_data)):
     X.append(scaled_data[i-sequence_length:i, 0])
@@ -45,7 +85,7 @@ predicted_prices = scaler.inverse_transform(predicted_prices)
 test_dates = adjusted_index[train_size + val_size:]
 # Now create DataFrame
 test_df = pd.DataFrame({
-    'CLOSE_PRICE': df['CLOSE_PRICE'].iloc[sequence_length + train_size + val_size:].values,
+    'CURRENT_PRICE': df['CURRENT_PRICE'].iloc[sequence_length + train_size + val_size:].values,
     'PREDICTED_PRICE': predicted_prices.flatten()
 }, index=test_dates)
 
@@ -72,7 +112,7 @@ last_timestamp = test_df.index[-1]
 future_timestamps = pd.date_range(start=last_timestamp + pd.Timedelta(minutes=1), periods=future_steps, freq='T')
 
 future_df = pd.DataFrame({
-    'CLOSE_PRICE': [np.nan]*future_steps,
+    'CURRENT_PRICE': [np.nan]*future_steps,
     'PREDICTED_PRICE': future_predictions.flatten()
 }, index=future_timestamps)
 
