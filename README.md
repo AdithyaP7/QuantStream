@@ -200,7 +200,14 @@ def main(session: snowpark.Session):
 ### 1. Machine Learning + Flask Application
 Configured in "ML Models" Python Worksheet
 
-TO-DO
+1. **Packages** Install all necessary packages via `requirements.txt`.
+2. **Start Flask App** Start flask app by running `python app.py` in python-scripts directory
+3. **View** forecasts, historical data, and current time dashboards on interactive flask app in web browser.
+
+Long Short-Term Memory (LSTM) models are a type of recurrent neural network (RNN) specialized for learning long-term dependencies in sequential data, making them well-suited for forecasting stock prices based on patterns in historical returns. LSTM models can be tuned by adjusting the number of layers, hidden units, window size, learning rate, batch size, and number of training epochs to better capture underlying patterns in the stock data.
+
+Prophet, developed by Facebook, is an additive time series forecasting model designed to handle seasonality, holidays, and trend shifts with minimal parameter tuning, offering fast, interpretable predictions for business and financial data. Prophet models can be tuned by modifying changepoint sensitivity, seasonality modes (additive or multiplicative), and manually adding known holidays or events to improve forecast accuracy around significant disruptions.
+
 
 ---
 
