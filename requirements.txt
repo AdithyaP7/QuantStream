@@ -11,6 +11,8 @@ sklearn
 matplotlib
 statsmodels
 arch
+tensorflow
+pickle
 
 # Database (Snowflake)
 snowflake-connector-python
@@ -30,5 +32,3 @@ python-dotenv
 
 flask
 
-tensorflow
-pickle

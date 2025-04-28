@@ -31,7 +31,6 @@ def inject_stocks():
 
 @app.route('/')
 def home():
-    # 🛠 Query ALL latest rows in one shot
     sql = f"""
         WITH latest_per_stock AS (
             SELECT 
@@ -49,12 +48,10 @@ def home():
 
     df = query_snowflake(sql)
 
-    # 🧹 Normalize column names
     df.columns = df.columns.str.lower()
 
     latest_data = {}
 
-    # 🗺 Map stock -> (price, timestamp)
     for stock in STOCKS:
         stock_row = df[df['stock_symbol'] == stock]
 
@@ -88,7 +85,6 @@ def run_lstm_forecast(df, future_steps=50):
     log_ret = np.log(series[1:] / series[:-1]).flatten()
     series = log_ret.reshape(-1, 1)
 
-    # 🚨 Clean any NaNs, infs, -infs
     series = series[np.isfinite(series)]
     series = series.reshape(-1, 1)
 
@@ -96,7 +92,6 @@ def run_lstm_forecast(df, future_steps=50):
     scaler = StandardScaler()
     series_s = scaler.fit_transform(series)
 
-    # 4. Build sliding windows
     WINDOW = 20
 
     def make_dataset(arr, window):
@@ -111,8 +106,6 @@ def run_lstm_forecast(df, future_steps=50):
         raise ValueError("Not enough data points for LSTM training.")
 
     X = X.reshape(-1, WINDOW, 1)
-
-    # 5. Model
     model = Sequential([
         LSTM(50, return_sequences=True, input_shape=(WINDOW, 1)),
         LSTM(25),
@@ -120,11 +113,8 @@ def run_lstm_forecast(df, future_steps=50):
     ])
     model.compile(optimizer="adam", loss="mse")
 
-    # 6. Fit
     es = EarlyStopping("loss", patience=5, restore_best_weights=True)
     model.fit(X, y, epochs=20, batch_size=32, callbacks=[es], verbose=0)
-
-    # 7. Forecast
     history_s = list(series_s[-WINDOW:, 0])
     future_s = []
 
@@ -133,11 +123,7 @@ def run_lstm_forecast(df, future_steps=50):
         nxt = model.predict(x, verbose=0)[0, 0]
         future_s.append(nxt)
         history_s.append(nxt)
-
-    # 8. Inverse scale
     future_r = scaler.inverse_transform(np.array(future_s).reshape(-1, 1)).flatten()
-
-    # 9. Return to price
     last_price = df['close_price'].iloc[-1]
     prices = [last_price]
     for r in future_r:
@@ -152,10 +138,10 @@ def run_lstm_forecast(df, future_steps=50):
     future_idx = pd.date_range(df['timestamp_utc'].iloc[-1] + pd.Timedelta(hours=1), periods=future_steps, freq=freq)
 
     forecast_df = pd.DataFrame({
-        'ds': future_idx,             # keep same Prophet naming
-        'yhat': prices,               # predicted price
-        'yhat_lower': prices * 0.98,   # dummy lower bound (2% range)
-        'yhat_upper': prices * 1.02    # dummy upper bound (2% range)
+        'ds': future_idx,       
+        'yhat': prices, 
+        'yhat_lower': prices * 0.98, 
+        'yhat_upper': prices * 1.02   
     })
     return forecast_df
 
