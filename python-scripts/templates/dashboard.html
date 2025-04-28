@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">{{ symbol }} Dashboard 📈</h1>
+  
+  <div id="chart"></div>
+
+</div>
+
+<!-- Include Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script>
+  var labels = {{ labels|tojson }};
+  var values = {{ values|tojson }};
+
+  var trace = {
+    x: labels,
+    y: values,
+    mode: 'lines+markers',
+    name: '{{ symbol }} Price',
+    line: { shape: 'spline' },
+    marker: { size: 4 }
+  };
+
+  var layout = {
+    title: '{{ symbol }} Historical + Forecasted Prices',
+    xaxis: {
+      title: 'Time',
+      rangeslider: { visible: true },
+      type: 'date'
+    },
+    yaxis: {
+      title: 'Price (USD)'
+    },
+    height: 600
+  };
+
+  Plotly.newPlot('chart', [trace], layout);
+</script>
+
+{% endblock %}

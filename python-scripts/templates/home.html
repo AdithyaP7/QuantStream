@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Ticker Marquee -->
+<div id="ticker" class="bg-dark text-white py-2">
+    <div id="ticker-content" class="d-flex ticker-move">
+        {% for stock in stocks %}
+        <div class="ticker-item mx-3" id="ticker-{{ stock }}">
+            {{ stock }}: Loading...
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">📈 Stock Forecast Dashboard</h1>
+
+    <!-- Live data feed -->
+    <div id="datafeed" class="bg-white p-3 mb-5 rounded shadow-sm">
+        <h5 class="mb-3">🔔 Latest Stock Prices (Live)</h5>
+        <div id="latest-prices" class="row row-cols-1 row-cols-md-3 g-4">
+            {% for stock in stocks %}
+            <div class="col">
+                <div class="p-2 border rounded text-center small" id="price-{{ stock }}">
+                    Loading...
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Cards for each stock -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for stock in stocks %}
+        <div class="col">
+            <div class="card h-100 shadow-sm rounded">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <h5 class="card-title fw-bold">{{ stock }}</h5>
+                    <a href="{{ url_for('stock', symbol=stock) }}" class="btn btn-outline-primary w-100 my-1">
+                        📊 View Stock History
+                    </a>
+                    <a href="{{ url_for('forecast', symbol=stock) }}" class="btn btn-outline-success w-100 my-1">
+                        🧙‍♂️ View Forecast
+                    </a>
+                    <a href="{{ url_for('dashboard', symbol=stock) }}" class="btn btn-outline-info w-100 my-1">
+                        📈 View Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- JavaScript for Live Updates -->
+<script>
+let previousPrices = {};
+
+function refreshPrices() {
+    fetch('/api/latest_prices')
+      .then(response => response.json())
+      .then(data => {
+          for (let stock in data) {
+              const stockInfo = data[stock];
+
+              // Update live data feed
+              const elem = document.getElementById(`price-${stock}`);
+              if (elem) {
+                  if (stockInfo.price !== null && stockInfo.timestamp !== null) {
+                      let arrow = "";
+                      if (previousPrices[stock] !== undefined) {
+                          if (stockInfo.price > previousPrices[stock]) {
+                              arrow = " <span style='color:green;'>🔺</span>";
+                          } else if (stockInfo.price < previousPrices[stock]) {
+                              arrow = " <span style='color:red;'>🔻</span>";
+                          }
+                      }
+                      elem.innerHTML = `<strong>${stock}</strong><br>$${stockInfo.price.toFixed(2)}${arrow}<br><small class="text-muted">${stockInfo.timestamp}</small>`;
+                  } else {
+                      elem.innerHTML = `<strong>${stock}</strong><br>No data available`;
+                  }
+              }
+
+              // Update ticker
+              const tickerElem = document.getElementById(`ticker-${stock}`);
+              if (tickerElem) {
+                  if (stockInfo.price !== null) {
+                      let arrow = "";
+                      if (previousPrices[stock] !== undefined) {
+                          if (stockInfo.price > previousPrices[stock]) {
+                              arrow = " 🔺";
+                          } else if (stockInfo.price < previousPrices[stock]) {
+                              arrow = " 🔻";
+                          }
+                      }
+                      tickerElem.innerHTML = `${stock}: $${stockInfo.price.toFixed(2)}${arrow}`;
+                  } else {
+                      tickerElem.innerHTML = `${stock}: No data`;
+                  }
+              }
+
+              // Update previous price
+              previousPrices[stock] = stockInfo.price;
+          }
+      })
+      .catch(error => console.error('Error fetching latest prices:', error));
+}
+
+// Load immediately
+refreshPrices();
+// Refresh every 5 seconds
+setInterval(refreshPrices, 5000);
+</script>
+
+<style>
+/* Ticker styles */
+#ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+#ticker-content {
+    display: inline-flex;
+    animation: tickerMove linear infinite;
+}
+@keyframes tickerMove {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.ticker-item {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Minor UI */
+#datafeed {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+#latest-prices .col {
+    margin-bottom: 1rem;
+}
+</style>
+
+<script>
+// Dynamically adjust ticker animation speed
+document.addEventListener("DOMContentLoaded", function() {
+    const numberOfStocks = {{ stocks|length }};
+    const tickerContent = document.getElementById("ticker-content");
+
+    if (tickerContent) {
+        // Speed up if lots of stocks
+        const baseDuration = 20; // seconds
+        const adjustedDuration = Math.max(10, baseDuration * (10 / numberOfStocks));
+        tickerContent.style.animationDuration = adjustedDuration + "s";
+    }
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+  
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- BOOTSTRAP JS Bundle (for dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+    <style>
+      body {
+        background-color: #f4f6f8;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      .card-title {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      .chart-container {
+        position: relative;
+        margin: auto;
+        height: 400px;
+        width: 800px;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <!-- Stock Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="stockDropdown" role="button" data-bs-toggle="dropdown">
+                            Stock
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for stock in stocks %}
+                            <li><a class="dropdown-item" href="{{ url_for('stock', symbol=stock) }}">{{ stock }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+
+                    <!-- Forecast Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="forecastDropdown" role="button" data-bs-toggle="dropdown">
+                            Forecast
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for stock in stocks %}
+                            <li><a class="dropdown-item" href="{{ url_for('forecast', symbol=stock) }}">{{ stock }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+
+                    <!-- Dashboard Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown">
+                            Dashboard
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for stock in stocks %}
+                            <li><a class="dropdown-item" href="{{ url_for('dashboard', symbol=stock) }}">{{ stock }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+    

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">📈 Historical Stock Prices for {{ symbol }}</h1>
+
+    <!-- Responsive Plotly Graph -->
+    <div id="stock-chart" style="height:600px;"></div>
+
+    <!-- Recent Prices Table -->
+    <div class="mt-5">
+        <h3 class="text-center mb-3">Recent Prices</h3>
+        <div class="table-responsive" style="max-height:400px; overflow-y:auto;">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Timestamp (UTC)</th>
+                        <th>Close Price ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for idx in range(labels|length - 1, -1, -1) %}
+                  <tr>
+                      <td>{{ labels[idx] }}</td>
+                      <td>{{ "%.2f"|format(prices[idx]) }}</td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+              
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script>
+// Plot the stock price chart
+const labels = {{ labels|tojson }};
+const prices = {{ prices|tojson }};
+
+const trace = {
+    x: labels,
+    y: prices,
+    mode: 'lines+markers',
+    name: '{{ symbol }} Close Price',
+    line: { color: '#007bff', width: 2 },
+    marker: { size: 4 }
+};
+
+const layout = {
+    xaxis: {
+        title: 'Date',
+        showgrid: true,
+        tickangle: -45
+    },
+    yaxis: {
+        title: 'Close Price ($)',
+        showgrid: true,
+        zeroline: false
+    },
+    margin: { t: 30 },
+    height: 600,
+    plot_bgcolor: '#f8f9fa',
+    paper_bgcolor: '#f8f9fa'
+};
+
+Plotly.newPlot('stock-chart', [trace], layout, {responsive: true});
+</script>
+{% endblock %}

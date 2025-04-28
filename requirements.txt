@@ -13,6 +13,8 @@ arch
 # Database (Snowflake)
 snowflake-connector-python
 snowflake-sqlalchemy
+snowflake-snowpark-python
+
 
 # API Requests
 requests
@@ -23,3 +25,5 @@ uvicorn
 
 # Environment Variables
 python-dotenv
+
+flask
