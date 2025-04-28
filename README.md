@@ -217,6 +217,5 @@ Prophet, developed by Facebook, is an additive time series forecasting model des
 ## Notes
 - Ensure all Kafka and Zookeeper services are properly configured with open ports.
 - For best performance, use **Java 17** with **x86_64** architecture when running Kafka Connect.
-- Data privacy and security are paramount. Keep your `.env` file out of version control.
 
 ---
