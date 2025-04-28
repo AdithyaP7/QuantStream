@@ -2,6 +2,9 @@
 
 **QuantStream** is a real-time stock market analytics system that empowers everyday traders by delivering advanced insights through enhanced data streaming, processing, storage, and analytics. This system integrates Kafka, Snowflake, and ThetaData API to create a robust, scalable, and interactive trading experience.
 
+
+<img src="https://github.com/user-attachments/assets/dc437550-0100-46f8-8180-fe0f1c2e7512" width="300">
+
 ---
 
 ## Table of Contents
