@@ -7,6 +7,8 @@ numpy
 
 # Machine Learning & Forecasting
 scikit-learn
+sklearn
+matplotlib
 statsmodels
 arch
 
@@ -15,7 +17,7 @@ snowflake-connector-python
 snowflake-sqlalchemy
 snowflake-snowpark-python
 
-
+plotly
 # API Requests
 requests
 
@@ -27,3 +29,6 @@ uvicorn
 python-dotenv
 
 flask
+
+tensorflow
+pickle

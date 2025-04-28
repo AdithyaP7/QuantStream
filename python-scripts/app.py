@@ -19,7 +19,6 @@ def build_stock_query(symbol):
             STOCK_DB.STOCK_SCHEMA.TEST_CONNECTOR
         WHERE
             RECORD_CONTENT:stock_symbol::STRING = '{symbol}'
-            AND DAYOFWEEK(RECORD_CONTENT:timestamp_utc::TIMESTAMP_NTZ) BETWEEN 2 AND 6
         ORDER BY
             timestamp_utc
     """
@@ -407,14 +406,26 @@ def train_lstm_forecast(df, future_steps=50):
 @app.route('/forecast/<symbol>')
 def forecast(symbol):
     sql = f"""
-        SELECT 
-            RECORD_CONTENT:timestamp_utc::STRING AS timestamp_utc,
-            RECORD_CONTENT:close_price::FLOAT AS close_price
-        FROM STOCK_DB.STOCK_SCHEMA.TEST_CONNECTOR_SYNTHETIC
-        WHERE RECORD_CONTENT:stock_symbol::STRING = '{symbol}'
-        ORDER BY timestamp_utc
+        SELECT
+            RECORD_CONTENT:stock_symbol::STRING AS stock_symbol,
+            RECORD_CONTENT:timestamp_utc::TIMESTAMP_NTZ AS timestamp_utc,
+            RECORD_CONTENT:close_price::FLOAT AS close_price,
+        FROM
+            STOCK_DB.STOCK_SCHEMA.TEST_CONNECTOR
+        WHERE
+            RECORD_CONTENT:stock_symbol::STRING = '{symbol}'
+        ORDER BY
+            timestamp_utc DESC
+        LIMIT
+            7500
     """
-
+        
+    #     SELECT 
+    #         RECORD_CONTENT:timestamp_utc::STRING AS timestamp_utc,
+    #         RECORD_CONTENT:close_price::FLOAT AS close_price
+    #     FROM STOCK_DB.STOCK_SCHEMA.TEST_CONNECTOR
+    #     WHERE RECORD_CONTENT:stock_symbol::STRING = '{symbol}'
+    #     ORDER BY timestamp_utc
     df = query_snowflake(sql)
 
     try:
@@ -427,6 +438,9 @@ def forecast(symbol):
         historical_prices = historical_df['close_price'].tolist()
 
         combined = list(zip(reversed(forecast_labels+historical_labels), reversed(forecast_prices+historical_prices)))
+
+        print (historical_df.tail())
+        print (forecast_df.head())
 
         return render_template('forecast.html',
             symbol=symbol,
@@ -496,6 +510,9 @@ def dashboard(symbol):
 
     labels = combined.index.strftime('%Y-%m-%d %H:%M').tolist()
     values = combined['y'].fillna(combined['yhat']).tolist()
+
+    print (historical.tail())
+    print (forecast_df.head())
 
     return render_template('dashboard.html', symbol=symbol, labels=labels, values=values, stocks=STOCKS, title=f"{symbol} Dashboard")
 
