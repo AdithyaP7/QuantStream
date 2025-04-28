@@ -4,7 +4,7 @@ import pandas as pd
 df_1 = pd.read_csv("lstm_output.csv")
 df_2 = pd.read_csv('future_output.csv')
 
-start_idx = int(len(df_1) * 0.8)
+start_idx = int(len(df_1) * 0.85)
 df_tail = df_1.iloc[start_idx:]
 
 df_res = pd.concat([df_tail, df_2], ignore_index=True)

@@ -25,11 +25,26 @@ for i in range(sequence_length, len(scaled_data)):
 X, y = np.array(X), np.array(y)
 X = np.reshape(X, (X.shape[0], X.shape[1], 1))
 
-train_size = int(len(X) * 0.8)
-X_train, X_test = X[:train_size], X[train_size:]
-y_train, y_test = y[:train_size], y[train_size:]
+train_size = int(len(X) * 0.7)
+val_size = int(len(X) * 0.15)
 
-print(f"Training samples: {len(X_train)}, Testing samples: {len(X_test)}")
+X_train = X[:train_size]
+y_train = y[:train_size]
+
+X_val = X[train_size:train_size + val_size]
+y_val = y[train_size:train_size + val_size]
+
+X_test = X[train_size + val_size:]
+y_test = y[train_size + val_size:]
+
+print(f"Train: {len(X_train)}, Validation: {len(X_val)}, Test: {len(X_test)}")
+
+
+# train_size = int(len(X) * 0.8)
+# X_train, X_test = X[:train_size], X[train_size:]
+# y_train, y_test = y[:train_size], y[train_size:]
+
+# print(f"Training samples: {len(X_train)}, Testing samples: {len(X_test)}")
 
 model = Sequential()
 model.add(LSTM(units=50, return_sequences=True, input_shape=(X.shape[1], 1)))
@@ -40,7 +55,7 @@ model.add(Dense(units=25))
 model.add(Dense(units=1))
 
 model.compile(optimizer='adam', loss='mean_squared_error')
-model.fit(X_train, y_train, batch_size=32, epochs=10, validation_data=(X_test, y_test))
+model.fit(X_train, y_train, batch_size=32, epochs=10, validation_data=(X_val, y_val))
 
 model_file = "models/lstm_model.pkl"
 with open(model_file, "wb") as file:
