@@ -64,7 +64,7 @@ QuantStream uses the **ThetaData API** for real-time and historical stock data.
 
 Run this command to start the terminal:
 ```bash
-java -jar ThetaTerminal.jar quantstream.09@gmail.com Quantstream123
+java -jar ThetaTerminal.jar username password
 ```
 
 ### 2. Start Zookeeper & Kafka
