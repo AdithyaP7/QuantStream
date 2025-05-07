@@ -7,8 +7,7 @@ import time
 from datetime import datetime
 import pytz
 
-# Run this command to start the terminal:
-# java -jar ThetaTerminal.jar quantstream.09@gmail.com Quantstream123
+
 KAFKA_TOPIC = "stock_data"
 KAFKA_BROKER = "localhost:9091"
 

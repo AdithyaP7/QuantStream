@@ -3,8 +3,6 @@ import requests
 from datetime import datetime
 import pytz
 
-# Run this command to start the terminal:
-# java -jar ThetaTerminal.jar quantstream.09@gmail.com Quantstream123
 def get_current_stock_price(ticker):
     eastern = pytz.timezone('America/New_York')
     now_et = datetime.now(eastern)
